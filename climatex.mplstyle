@@ -1,0 +1,25 @@
+# Axes styling
+axes.titlesize : 13
+axes.facecolor: "#f1f1f1"
+axes.grid : True
+axes.grid.axis : both
+axes.grid.which : both
+axes.axisbelow: True
+axes.labelsize: 13
+
+# Figure styling
+figure.titlesize: 13.5
+
+# ticks and ticklabels
+xtick.labelsize : 12
+ytick.labelsize : 12
+xtick.major.size: 5.5
+xtick.major.width: 1.5
+ytick.major.size: 5.5
+ytick.major.width: 1.5
+
+# grids
+grid.color: white
+grid.linestyle: -
+grid.linewidth: 0.8
+grid.alpha: 1
