@@ -1,2 +1,7 @@
 .ipynb_checkpoints
-
+venv/
+*.png
+*.jpeg
+*.pdf
+__*
+outputs/
