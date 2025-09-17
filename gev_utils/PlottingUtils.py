@@ -5,22 +5,29 @@ import numpy as np
 
 
 class Plotter:
-    """Creates visualizations. In general this class takes data and instances of matplotlib.figure.Figure
-    and matplotlib.axes.Axes, it will create a visualization and return the modified fig and ax(es)
+    """Creates visualizations. In general this class takes data and
+    instances of matplotlib.figure.Figure and matplotlib.axes.Axes, it
+    will create a visualization and return the modified fig and ax(es)
     instances for further fine tuning.
 
-        Attributes:
-            self.gb_outline_gdf (geopandas.GeoDataFrame): An outline of the island of Great Britain.
-            self.gev_dict (dict): The results of statiscal modelling created by the accompanying Jupyter notebook.
-            self.data_dict (dict): The instance of `data_dict` created by DataImportUtils, containing data to be used in visualizations.
+    Attributes:
+        self.gb_outline_gdf (geopandas.GeoDataFrame): An outline of the
+            island of Great Britain.
+        self.gev_dict (dict): The results of statiscal modelling created
+            by the accompanying Jupyter notebook.
+        self.data_dict (dict): The instance of `data_dict` created by
+            DataImportUtils, containing data to be used in visualizations.
     """
 
     def __init__(self, gb_outline_gdf, gev_dict, data_dict):
         """Construct an instance of Plotter.
         Args:
-            self.gb_outline_gdf (geopandas.GeoDataFrame): An outline of the island of Great Britain.
-            self.gev_dict (dict): The results of statiscal modelling created by the accompanying Jupyter notebook.
-            self.data_dict (dict): The instance of `data_dict` created by DataImportUtils, containing data to be used in visualizations.
+            self.gb_outline_gdf (geopandas.GeoDataFrame): An outline of
+                the island of Great Britain.
+            self.gev_dict (dict): The results of statiscal modelling
+                created by the accompanying Jupyter notebook.
+            self.data_dict (dict): The instance of `data_dict` created
+                by DataImportUtils, containing data to be used in visualizations.
         Returns:
             None
         """
@@ -30,18 +37,21 @@ class Plotter:
 
     def plot_ts(self, station_name, fig, axes):
         """Plots the time series with annual maxima highlighted and the
-        probability density function estimated using Gaussian kernals .
+        probability density function estimated using Gaussian kernals.
 
-            Args:
-                station_name (str): A string of the met station name.
-                fig (matplotlib.figure.Figure): An instance of matplotlib.pyplot.Fig.
-                axes (matplotlib.axes.Axes or array of Axes): An instance of matplotlib.axes.Axes.
+        Args:
+            station_name (str): A string of the met station name.
+            fig (matplotlib.figure.Figure): An instance of
+                matplotlib.pyplot.Fig.
+            axes (matplotlib.axes.Axes or array of Axes): An instance of
+                matplotlib.axes.Axes.
 
-            Returns:
-                fig (matplotlib.figure.Figure): The modified instance of matplotlib.pyplot.Fig.
-                axes (matplotlib.axes.Axes or array of Axes): The modified array of Axes of matplotlib.axes.Axes instances.
+        Returns:
+            fig (matplotlib.figure.Figure): The modified instance of
+                matplotlib.pyplot.Fig.
+            axes (matplotlib.axes.Axes or array of Axes): The modified
+                array of Axes of matplotlib.axes.Axes instances.
         """
-
         fig, axes = fig, axes
         df = self.data_dict[station_name]
         df.plot(kind="density", ax=axes[1])
@@ -66,17 +76,21 @@ class Plotter:
         """Plots samples from the priors
 
         Args:
-            idata (arviz.InferenceData): An instance of arviz.InferenceData.
-            ax (matplotlib.axes.Axes): An instance of matplotlib.axes.Axes.
+            idata (arviz.InferenceData): An instance of
+                arviz.InferenceData.
+            ax (matplotlib.axes.Axes): An instance of
+                matplotlib.axes.Axes.
 
         Kwargs:
-            xlim (list): a list to be passed to matplotlib.pyplot.xlim, default value `[0, 180]`.
-            ylim (list): a list to be passed to matplotlib.pyplot.ylim, default value `[0, 0.4]`.
+            xlim (list): a list to be passed to matplotlib.pyplot.xlim,
+                default value `[0, 180]`.
+            ylim (list): a list to be passed to matplotlib.pyplot.ylim,
+                default value `[0, 0.4]`.
 
         Returns:
-            ax (matplotlib.axes.Axes): The modified instance of matplotlib.axes.Axes.
+            ax (matplotlib.axes.Axes): The modified instance of
+                matplotlib.axes.Axes.
         """
-
         az.plot_ppc(idata, group="prior", ax=ax)
         ax.set_xlim(xlim)
         ax.set_ylim(ylim)
@@ -86,28 +100,33 @@ class Plotter:
         """Plots posterior predictive check.
 
         Args:
-            idata (arviz.InferenceData): An instance of arviz.InferenceData.
-            ax (matplotlib.axes.Axes): An instance of matplotlib.axes.Axes.
+            idata (arviz.InferenceData): An instance of
+                arviz.InferenceData.
+            ax (matplotlib.axes.Axes): An instance of
+                matplotlib.axes.Axes.
 
         Returns:
-            ax (matplotlib.axes.Axes): The modified instance of matplotlib.axes.Axes.
+            ax (matplotlib.axes.Axes): The modified instance of
+                matplotlib.axes.Axes.
         """
-
         az.plot_ppc(idata, num_pp_samples=100, ax=ax)
         return ax
 
     def plot_return_period(self, post_pred, return_periods, ax):
-        """Plots a graph of the return intensity for each return period with 95% HDI.
+        """Plots a graph of the return intensity for each return period
+        with 95% HDI.
 
         Args:
-            post_pred (arviz.InferenceData.posterior): An instance of arviz.InferenceData.posterior.
-            return_periods (numpy.array): The numpy array used to generate predictions for the posterior.
+            post_pred (arviz.InferenceData.posterior): An instance of
+                arviz.InferenceData.posterior.
+            return_periods (numpy.array): The numpy array used to
+                generate predictions for the posterior.
             ax (matplotlib.axes.Axes): An instance of matplotlib.axes.Axes.
 
         Returns:
-            ax (matplotlib.axes.Axes): The modified instance of matplotlib.axes.Axes.
+            ax (matplotlib.axes.Axes): The modified instance of
+                matplotlib.axes.Axes.
         """
-
         y_data = az.summary(
             post_pred.posterior_predictive, var_names="ri", hdi_prob=0.95
         )
@@ -123,17 +142,22 @@ class Plotter:
         return ax
 
     def plot_prior_post_prediction(self, station_name, fig, axes):
-        """Plots the prior predictive, the posterior predictive and predictions. Styles plots using
-        climatex.mplstyle (hard-coded).
+        """Plots the prior predictive, the posterior predictive and
+        predictions. Styles plots using climatex.mplstyle (hard-coded).
 
         Args:
-            station_name (str): A string of the station name key in gev_dict.
-            fig (matplotlib.figure.Figure): An instance of matplotlib.pyplot.Fig.
-            axes (an array of matplotlib.axes.Axes): The array of matplotlib.axes.Axes.
+            station_name (str): A string of the station name key in
+                gev_dict.
+            fig (matplotlib.figure.Figure): An instance of
+                matplotlib.pyplot.Fig.
+            axes (an array of matplotlib.axes.Axes): The array of
+                matplotlib.axes.Axes.
 
         Returns:
-            fig (matplotlib.figure.Figure): The modified instance of matplotlib.pyplot.Fig.
-            axes (matplotlib.axes.Axes or array of Axes): The modified array of Axes of matplotlib.axes.Axes instances.
+            fig (matplotlib.figure.Figure): The modified instance of
+                matplotlib.pyplot.Fig.
+            axes (matplotlib.axes.Axes or array of Axes): The modified
+                array of Axes of matplotlib.axes.Axes instances.
         """
 
         plt.style.use("./climatex.mplstyle")
@@ -167,18 +191,22 @@ class Plotter:
         return fig, axes
 
     def plot_choropleth(self, geomunger, fig, axes):
-        """Plots 3 choropleth maps in one figure, the first of `Return intensity`, the
-        second is of the risk variable (average house price), and the third is of
-        the risk-adjusted house price.
+        """Plots 3 choropleth maps in one figure, the first of `Return
+        intensity`, the second is of the risk variable (average house
+        price), and the third is of the risk-adjusted house price.
 
-            Args:
-                geomunger (class.GeoMunger): An instance of GeoMunger.
-                fig (matplotlib.figure.Figure): An instance of matplotlib.pyplot.Fig.
-                axes (an array of matplotlib.axes.Axes): The array of matplotlib.axes.Axes.
+        Args:
+            geomunger (class.GeoMunger): An instance of GeoMunger.
+            fig (matplotlib.figure.Figure): An instance of
+                matplotlib.pyplot.Fig.
+            axes (an array of matplotlib.axes.Axes): The array of
+                matplotlib.axes.Axes.
 
-            Returns:
-                fig (matplotlib.figure.Figure): The modified instance of matplotlib.pyplot.Fig.
-                axes (matplotlib.axes.Axes or array of Axes): The modified array of Axes of matplotlib.axes.Axes instances.
+        Returns:
+            fig (matplotlib.figure.Figure): The modified instance of
+                matplotlib.pyplot.Fig.
+            axes (matplotlib.axes.Axes or array of Axes): The modified
+                array of Axes of matplotlib.axes.Axes instances.
         """
         gdf = geomunger.unified_gdf
         risk_gdf = geomunger.get_risk_adj_df()
@@ -189,7 +217,8 @@ class Plotter:
             "legend_kwds": {"fmt": "{:,.0f}"},
             "lw": 0.3,
         }
-        # geopandas .plot() returns a new Axes instance, use this to modify legend etc.
+        # geopandas .plot() returns a new Axes instance, use this to
+        # modify legend etc.
         ax_0 = gdf.plot(
             **plotting_kwargs, column="Return intensity", ax=axes[0], ec="k"
         )
@@ -270,22 +299,26 @@ class Plotter:
         targ_col="Risk-adjusted house price",
         hdi_cols=["Lower_adj", "Upper_adj"],
     ):
-        """Helper method to get the absolute difference between values and hdi bounds
-        as the absolute difference and not the values themselves are needed for
-        matplotlib.pyplot.axes.errrorbar.
+        """Helper method to get the absolute difference between values
+        and hdi bounds as the absolute difference and not the values
+        themselves are needed for matplotlib.pyplot.axes.errrorbar.
 
-            Args:
-                df (pandas.DataFrame): A pandas.DataFrame of the risk-adjusted values generated by DataImportUtils.
+        Args:
+            df (pandas.DataFrame): A pandas.DataFrame of the
+                risk-adjusted values generated by DataImportUtils.
 
-            Kwargs:
-                targ_col (str): A string of the name of the column containing risk-adjusted values, default 'Risk-adjusted house price'.
-                hdi_cols (list): A list of length 2 containing the name of the columns with the risk-adjusted lower and upper bounds, respectively.
-                                Default ['Lower_adj', 'Upper_adj'].
+        Kwargs:
+            targ_col (str): A string of the name of the column
+                containing risk-adjusted values, default 'Risk-adjusted
+                house price'.
+            hdi_cols (list): A list of length 2 containing the name of
+                the columns with the risk-adjusted lower and upper
+                bounds, respectively. Default ['Lower_adj', 'Upper_adj'].
 
-            Returns:
-                error_bar_df (pandas.DataFrame): A pandas.DataFrame containing data used to add error bars to plots.
+        Returns:
+            error_bar_df (pandas.DataFrame): A pandas.DataFrame
+                containing data used to add error bars to plots.
         """
-
         error_bar_df = (
             df.loc[:, hdi_cols].sub(df.loc[:, [targ_col]].values).abs()
         )
@@ -296,19 +329,27 @@ class Plotter:
         result of GeoMunger.get_risk_adj_df().
 
         Args:
-            df (pandas.DataFrame): A pandas.DataFrame containing risk-adjusted house prices and statistical predictions.
-            fig (matplotlib.figure.Figure): An instance of matplotlib.pyplot.Fig.
-            axes (matplotlib.axes.Axes): An instance of matplotlib.axes.Axes.
+            df (pandas.DataFrame): A pandas.DataFrame containing
+                risk-adjusted house prices and statistical predictions.
+            fig (matplotlib.figure.Figure): An instance of
+                matplotlib.pyplot.Fig.
+            axes (matplotlib.axes.Axes): An instance of
+                matplotlib.axes.Axes.
 
         Kwargs:
-            index (pandas.DataFrame.index): An instance of pandas.DataFrame.index to be used for the y-axis
-                                            (NB this is a horizontal bar plot, so these are station names).
+            index (pandas.DataFrame.index): An instance of
+                pandas.DataFrame.index to be used for the y-axis (NB
+                this is a horizontal bar plot, so these are station
+                names).
 
         Returns:
-                fig (matplotlib.figure.Figure): The modified instance of matplotlib.pyplot.Fig.
-                axes (matplotlib.axes.Axes): The modified matplotlib.axes.Axes instance.
-                df.index (pandas.DataFrame.index): The pandas.DataFrame.index used a labels for the plot, these are station names.
-
+            fig (matplotlib.figure.Figure): The modified instance of
+                matplotlib.pyplot.Fig.
+            axes (matplotlib.axes.Axes): The modified
+                matplotlib.axes.Axes instance.
+            df.index (pandas.DataFrame.index): The
+                pandas.DataFrame.index used a labels for the plot, these
+                are station names.
         """
         if index is not None:
             df.index = df.loc[index].index
