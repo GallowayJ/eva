@@ -7,3 +7,5 @@ __*
 outputs/
 _*/
 _*
+pyproject.toml
+*.kate-swp
