@@ -5,3 +5,5 @@ venv/
 *.pdf
 __*
 outputs/
+_*/
+_*
