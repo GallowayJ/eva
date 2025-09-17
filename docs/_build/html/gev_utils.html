@@ -1,0 +1,1141 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gev_utils package &mdash; GEV utils 00.00.01 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=d7bb8d4d"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            GEV utils
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="modules.html">GEV utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">gev_utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-gev_utils.DataImportUtils">gev_utils.DataImportUtils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gev_utils.DataImportUtils.DataMunger"><code class="docutils literal notranslate"><span class="pre">DataMunger</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.DataMunger.assign_correct_dtypes"><code class="docutils literal notranslate"><span class="pre">DataMunger.assign_correct_dtypes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.DataMunger.create_dt_index"><code class="docutils literal notranslate"><span class="pre">DataMunger.create_dt_index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.DataMunger.drop_unneeded_cols"><code class="docutils literal notranslate"><span class="pre">DataMunger.drop_unneeded_cols()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.DataMunger.get_extreme_dict"><code class="docutils literal notranslate"><span class="pre">DataMunger.get_extreme_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.DataMunger.get_station_coords"><code class="docutils literal notranslate"><span class="pre">DataMunger.get_station_coords()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.DataMunger.remove_units_header"><code class="docutils literal notranslate"><span class="pre">DataMunger.remove_units_header()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.DataMunger.save_data"><code class="docutils literal notranslate"><span class="pre">DataMunger.save_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.DataMunger.strip_asterices"><code class="docutils literal notranslate"><span class="pre">DataMunger.strip_asterices()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.DataMunger.tidy_data"><code class="docutils literal notranslate"><span class="pre">DataMunger.tidy_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#gev_utils.DataImportUtils.GeoMunger"><code class="docutils literal notranslate"><span class="pre">GeoMunger</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.GeoMunger.self.house_price"><code class="docutils literal notranslate"><span class="pre">GeoMunger.self.house_price</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.GeoMunger.self.station_coords"><code class="docutils literal notranslate"><span class="pre">GeoMunger.self.station_coords</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.GeoMunger.self.metrics_df"><code class="docutils literal notranslate"><span class="pre">GeoMunger.self.metrics_df</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.GeoMunger.self.unified_gdf"><code class="docutils literal notranslate"><span class="pre">GeoMunger.self.unified_gdf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.GeoMunger.self.aoi_outline"><code class="docutils literal notranslate"><span class="pre">GeoMunger.self.aoi_outline</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.GeoMunger.add_metrics_to_stations"><code class="docutils literal notranslate"><span class="pre">GeoMunger.add_metrics_to_stations()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.GeoMunger.convert_crs"><code class="docutils literal notranslate"><span class="pre">GeoMunger.convert_crs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.GeoMunger.extract_station_metrics"><code class="docutils literal notranslate"><span class="pre">GeoMunger.extract_station_metrics()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.GeoMunger.get_error_bounds"><code class="docutils literal notranslate"><span class="pre">GeoMunger.get_error_bounds()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.GeoMunger.get_metrics_df"><code class="docutils literal notranslate"><span class="pre">GeoMunger.get_metrics_df()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.GeoMunger.get_return_period_results"><code class="docutils literal notranslate"><span class="pre">GeoMunger.get_return_period_results()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.GeoMunger.get_risk_adj_df"><code class="docutils literal notranslate"><span class="pre">GeoMunger.get_risk_adj_df()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.GeoMunger.get_risk_adjusted_hp"><code class="docutils literal notranslate"><span class="pre">GeoMunger.get_risk_adjusted_hp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.GeoMunger.join_house_prices"><code class="docutils literal notranslate"><span class="pre">GeoMunger.join_house_prices()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.GeoMunger.minmax_normalizer"><code class="docutils literal notranslate"><span class="pre">GeoMunger.minmax_normalizer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.GeoMunger.remove_nans"><code class="docutils literal notranslate"><span class="pre">GeoMunger.remove_nans()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.GeoMunger.tidy_data"><code class="docutils literal notranslate"><span class="pre">GeoMunger.tidy_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#gev_utils.DataImportUtils.WebScraper"><code class="docutils literal notranslate"><span class="pre">WebScraper</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.WebScraper.self.base_url"><code class="docutils literal notranslate"><span class="pre">WebScraper.self.base_url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.WebScraper.self.station_links"><code class="docutils literal notranslate"><span class="pre">WebScraper.self.station_links</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.WebScraper.self.station_dict"><code class="docutils literal notranslate"><span class="pre">WebScraper.self.station_dict</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.WebScraper.self.nonstandard_list"><code class="docutils literal notranslate"><span class="pre">WebScraper.self.nonstandard_list</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.WebScraper.get_coordinates"><code class="docutils literal notranslate"><span class="pre">WebScraper.get_coordinates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.WebScraper.get_data"><code class="docutils literal notranslate"><span class="pre">WebScraper.get_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.DataImportUtils.WebScraper.get_stations_and_links"><code class="docutils literal notranslate"><span class="pre">WebScraper.get_stations_and_links()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-gev_utils.PlottingUtils">gev_utils.PlottingUtils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gev_utils.PlottingUtils.Plotter"><code class="docutils literal notranslate"><span class="pre">Plotter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.PlottingUtils.Plotter.self.gb_outline_gdf"><code class="docutils literal notranslate"><span class="pre">Plotter.self.gb_outline_gdf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.PlottingUtils.Plotter.self.gev_dict"><code class="docutils literal notranslate"><span class="pre">Plotter.self.gev_dict</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.PlottingUtils.Plotter.self.data_dict"><code class="docutils literal notranslate"><span class="pre">Plotter.self.data_dict</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.PlottingUtils.Plotter.get_difference"><code class="docutils literal notranslate"><span class="pre">Plotter.get_difference()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.PlottingUtils.Plotter.plot_choropleth"><code class="docutils literal notranslate"><span class="pre">Plotter.plot_choropleth()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.PlottingUtils.Plotter.plot_posterior"><code class="docutils literal notranslate"><span class="pre">Plotter.plot_posterior()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.PlottingUtils.Plotter.plot_prior_check"><code class="docutils literal notranslate"><span class="pre">Plotter.plot_prior_check()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.PlottingUtils.Plotter.plot_prior_post_prediction"><code class="docutils literal notranslate"><span class="pre">Plotter.plot_prior_post_prediction()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.PlottingUtils.Plotter.plot_return_period"><code class="docutils literal notranslate"><span class="pre">Plotter.plot_return_period()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.PlottingUtils.Plotter.plot_risk_adj_bar"><code class="docutils literal notranslate"><span class="pre">Plotter.plot_risk_adj_bar()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gev_utils.PlottingUtils.Plotter.plot_ts"><code class="docutils literal notranslate"><span class="pre">Plotter.plot_ts()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-gev_utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">GEV utils</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">gev_utils package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/gev_utils.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="gev-utils-package">
+<h1>gev_utils package<a class="headerlink" href="#gev-utils-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-gev_utils.DataImportUtils">
+<span id="gev-utils-dataimportutils-module"></span><h2>gev_utils.DataImportUtils module<a class="headerlink" href="#module-gev_utils.DataImportUtils" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.DataMunger">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gev_utils.DataImportUtils.</span></span><span class="sig-name descname"><span class="pre">DataMunger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.DataMunger" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Carries out data munging of self.data_dict. Drops unneeded data
+columns, removes header units, strips characters from numeric fields
+so that correct dtypes can be assigned, extracts station coordinates
+from station metadata, creates a datatime index and contains a
+method to return an extreme value dict.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Attributes:</dt><dd><dl class="simple">
+<dt>self.data_dict (dict): A dictionary where keys are station</dt><dd><p>names and values are lists of station data and metadata.</p>
+</dd>
+<dt>self.station_coords_list (list): A list of latitude and</dt><dd><p>longitude extracted from station metadata.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.DataMunger.assign_correct_dtypes">
+<span class="sig-name descname"><span class="pre">assign_correct_dtypes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.DataMunger.assign_correct_dtypes" title="Link to this definition"></a></dt>
+<dd><p>Iterates through self.data_dict. Rows containing missing
+observations are dropped, and the following dtypes are
+assigned: Year (Int64), Month (Int64), Rainfall (float32).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.DataMunger.create_dt_index">
+<span class="sig-name descname"><span class="pre">create_dt_index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.DataMunger.create_dt_index" title="Link to this definition"></a></dt>
+<dd><p>Iterates through self.data_dict, Year and Month columns are
+used to create a datetime intex which is assigned to a new
+column, ‘Date’ which is set to the index of the DataFrame. Year
+and Month columns are then dropped.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.DataMunger.drop_unneeded_cols">
+<span class="sig-name descname"><span class="pre">drop_unneeded_cols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">targ_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['Rainfall']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.DataMunger.drop_unneeded_cols" title="Link to this definition"></a></dt>
+<dd><p>Drops all columns apart from ‘Year’, ‘Month’ and targ_column.</p>
+<dl class="simple">
+<dt>Kwargs:</dt><dd><p>targ_col (list): A list containing names (str) of columns
+to keep.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>Modified data_dict consisting of</dt><dd><p>columns in targ_col and ‘Year’ and ‘Month’ columns.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>self.data_dict (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.DataMunger.get_extreme_dict">
+<span class="sig-name descname"><span class="pre">get_extreme_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.DataMunger.get_extreme_dict" title="Link to this definition"></a></dt>
+<dd><p>Iterates through a data_dict and resamples by year, returning
+the maxima. It returns a dictionary containing the resampled
+DataFrames.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_dict</strong> (<em>dict</em>) – A dictionary where the keys are station
+names and values are DataFrames. DataFrames must have a
+datetime index.</p></li>
+<li><p><strong>Returns</strong> – <dl class="simple">
+<dt>maxima_dict (dict): A dictionary where the keys are</dt><dd><p>station names and the values are DataFrames
+containing the annual maxima.</p>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.DataMunger.get_station_coords">
+<span class="sig-name descname"><span class="pre">get_station_coords</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.DataMunger.get_station_coords" title="Link to this definition"></a></dt>
+<dd><p>Iterates through self.data_dict, latitude and longitude is
+extracted from metadata and appended to self.station_coords_list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.DataMunger.remove_units_header">
+<span class="sig-name descname"><span class="pre">remove_units_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">targ_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mm'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targ_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Rainfall'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.DataMunger.remove_units_header" title="Link to this definition"></a></dt>
+<dd><p>Removes the first row if it has been used to specify units of
+measure.</p>
+<dl class="simple">
+<dt>Kwargs:</dt><dd><p>targ_str (str): The unit string to be removed.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.DataMunger.save_data">
+<span class="sig-name descname"><span class="pre">save_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.DataMunger.save_data" title="Link to this definition"></a></dt>
+<dd><p>Iterates through self.data_dict and saves each DataFrame into
+‘directory’ as a .csv named by the dictionary key (station name).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>directory</strong> (<em>str</em>) – The name of the directory where .csvs
+should be saved.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Kwargs:</dt><dd><p>Keyword arguments to pass to pandas.DataFrame.to_csv().</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.DataMunger.strip_asterices">
+<span class="sig-name descname"><span class="pre">strip_asterices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.DataMunger.strip_asterices" title="Link to this definition"></a></dt>
+<dd><p>Iterates through self.data_dict, DataFrames containing
+asterices are removed. Each DataFrame in self.data_dict is
+modified in place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.DataMunger.tidy_data">
+<span class="sig-name descname"><span class="pre">tidy_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.DataMunger.tidy_data" title="Link to this definition"></a></dt>
+<dd><p>Carries out data munging by calling self.drop_unneeded_cols,
+self.remove_units_header, self.strip_asterices,
+self.assign_correct_dtypes, self.create_dt_index,
+self.get_station_coords.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.GeoMunger">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gev_utils.DataImportUtils.</span></span><span class="sig-name descname"><span class="pre">GeoMunger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gdf_house_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gdf_station_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aoi_outline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.GeoMunger" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Handles parsing, unifification and tidying of spatial data and
+supporting information (house price data and modelling results).</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.GeoMunger.self.house_price">
+<span class="sig-prename descclassname"><span class="pre">self.</span></span><span class="sig-name descname"><span class="pre">house_price</span></span><a class="headerlink" href="#gev_utils.DataImportUtils.GeoMunger.self.house_price" title="Link to this definition"></a></dt>
+<dd><p>A pandas.DataFrame of
+average house prices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.GeoMunger.self.station_coords">
+<span class="sig-prename descclassname"><span class="pre">self.</span></span><span class="sig-name descname"><span class="pre">station_coords</span></span><a class="headerlink" href="#gev_utils.DataImportUtils.GeoMunger.self.station_coords" title="Link to this definition"></a></dt>
+<dd><p>A pandas.DataFrame of
+station latitude and longitude.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.GeoMunger.self.metrics_df">
+<span class="sig-prename descclassname"><span class="pre">self.</span></span><span class="sig-name descname"><span class="pre">metrics_df</span></span><a class="headerlink" href="#gev_utils.DataImportUtils.GeoMunger.self.metrics_df" title="Link to this definition"></a></dt>
+<dd><p>A pandas.DataFrame of
+predictions, error bounds and supporting data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.GeoMunger.self.unified_gdf">
+<span class="sig-prename descclassname"><span class="pre">self.</span></span><span class="sig-name descname"><span class="pre">unified_gdf</span></span><a class="headerlink" href="#gev_utils.DataImportUtils.GeoMunger.self.unified_gdf" title="Link to this definition"></a></dt>
+<dd><p>A geopandas.GeoDataFrame
+containing statistical data and geospatial data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>geopandas.GeoDataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.GeoMunger.self.aoi_outline">
+<span class="sig-prename descclassname"><span class="pre">self.</span></span><span class="sig-name descname"><span class="pre">aoi_outline</span></span><a class="headerlink" href="#gev_utils.DataImportUtils.GeoMunger.self.aoi_outline" title="Link to this definition"></a></dt>
+<dd><p>A geopandas.GeoDataFrame
+of the outline of the area of interest (aoi).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>geopandas.GeoDataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.GeoMunger.add_metrics_to_stations">
+<span class="sig-name descname"><span class="pre">add_metrics_to_stations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.GeoMunger.add_metrics_to_stations" title="Link to this definition"></a></dt>
+<dd><p>Merges <cite>self.station_coords</cite> and <cite>self.metrics_df</cite> on station
+name with the result set to <cite>self.metrics_df</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.GeoMunger.convert_crs">
+<span class="sig-name descname"><span class="pre">convert_crs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">crs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'EPSG:27700'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.GeoMunger.convert_crs" title="Link to this definition"></a></dt>
+<dd><p>Converts the crs of <cite>self.house_price</cite> and
+<cite>self.station_coords</cite> to <cite>crs</cite>.</p>
+<dl class="simple">
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>crs (str): A valid crs string to be passed to</dt><dd><p>geopandas.GeoDataFrame.to_crs(), default <cite>EPSG:27700</cite>,
+(recommended for the UK).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.GeoMunger.extract_station_metrics">
+<span class="sig-name descname"><span class="pre">extract_station_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gev_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.GeoMunger.extract_station_metrics" title="Link to this definition"></a></dt>
+<dd><p>Extracts mean predicted return intensity and the 95% HDI
+from an instance of gev_dict and the corresponding return periods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>gev_dict</strong> (<em>dict</em>) – An instance of gev_dict generated by
+fitting extreme events to the generalized extreme value
+distribution using PyMC. NB gev_dict is generated by
+the accompaning Jupyter Notebook.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A pandas DataFrame</dt><dd><p>containing only the information needed for carrying out
+analysis in the accompaning Jupyter noteobook.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>station_metrics (pd.DataFrame)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.GeoMunger.get_error_bounds">
+<span class="sig-name descname"><span class="pre">get_error_bounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">risk_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Return</span> <span class="pre">intensity'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targ_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Risk-adjusted</span> <span class="pre">house</span> <span class="pre">price'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdi_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['Lower',</span> <span class="pre">'Upper']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.GeoMunger.get_error_bounds" title="Link to this definition"></a></dt>
+<dd><p>This methods takes a df containing the 95% HDI and uses the
+ratio of the lower and upper bounds to calculate error for
+risk-adjusted house prices. It assigns the same ratio between
+mean rainfall prediction and the 95% HDI interval to the
+risk-adjusted house prices</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>pandas.DataFrame</em>) – A pandas.DataFrame containing the 95%
+HDI and uses the ratio of the lower and upper bounds to
+calculate error for risk-adjusted house prices.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>risk_var (str): The name of the column containing the risk</dt><dd><p>variable in <cite>df</cite>.</p>
+</dd>
+<dt>targ_col (str): The name of the column continaing the</dt><dd><p>risk-adjusted values in <cite>df</cite>.</p>
+</dd>
+<dt>hdi_cols (list): A list of length 2 containing the names in</dt><dd><p>the HDI columns in <cite>df</cite> order must be lower bound
+followed by upper bound.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.GeoMunger.get_metrics_df">
+<span class="sig-name descname"><span class="pre">get_metrics_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gev_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.GeoMunger.get_metrics_df" title="Link to this definition"></a></dt>
+<dd><p>Updates self.metric_df with mean prediction and lower and
+upper bound of the HDI (by default 95%) by extracting this
+information from <cite>gev_dict</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>gev_dict</strong> (<em>dict</em>) – A dict containing results modelling results
+from the accompaning Jupyter Notebook.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.GeoMunger.get_return_period_results">
+<span class="sig-name descname"><span class="pre">get_return_period_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">station_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_period_yrs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.GeoMunger.get_return_period_results" title="Link to this definition"></a></dt>
+<dd><p>This method takes a pandas DataFrame containing the predicted
+return period, intensity and confidence intervals and returns a
+single row DataFrame containing this metric in addtion to adding
+a column with the site name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>station_name</strong> (<em>str</em>) – The name of the met station.</p></li>
+<li><p><strong>df</strong> (<em>pandas.DataFrame</em>) – A pandas.DataFrame containing the
+results of the posterior preditive containing the
+return period, return intensity and HDI (95% is used in
+this example).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>return_period_yrs (int): The return period of interest,</dt><dd><p>default 20.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>A pandas.DataFrame containing the</dt><dd><p>return intensity, lower and upper intervals for
+<cite>return_period_yrs</cite>.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>df (pandas.DataFrame)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.GeoMunger.get_risk_adj_df">
+<span class="sig-name descname"><span class="pre">get_risk_adj_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">risk_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Return</span> <span class="pre">intensity'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">adj_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Average_Price'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdi_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['Lower',</span> <span class="pre">'Upper']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">risk_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">risk_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">160</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.GeoMunger.get_risk_adj_df" title="Link to this definition"></a></dt>
+<dd><p>Returns risk-adjusted house prices, lower and upper estimates.
+Lower and upper estimates are based on the ratio of the HDI
+lower/upper estimates for risk var. Risk weight determines the
+largest value of the risk factor, risk threshold set the level
+which must be exceeded for risk-adjustment to take place (in
+[mm] rainfall).</p>
+<dl class="simple">
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>df (pandas.DataFrame): A pandas.DataFrame containing the</dt><dd><p>risk varible predictions, HDI bounds and house prices.</p>
+</dd>
+<dt>risk_var (str): The name of the risk variable in <cite>df</cite>,</dt><dd><p>default value ‘Return intensity’.</p>
+</dd>
+<dt>adj_col (str): The name of the column containing values to</dt><dd><p>be risk-adjusted in <cite>df</cite>, default ‘Average_Price’.</p>
+</dd>
+<dt>risk_weight (float): The weighting that risk_var should</dt><dd><p>carry, larger values give a greater weighting. This
+value is passed to self.minmax_normalizer(). Default is
+0.5.</p>
+</dd>
+<dt>risk_threshold (int): The value that should be exceeded for</dt><dd><p>risk-adjustment to occur, default 160 (mm rainfall).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>A pandas.DataFrame containing</dt><dd><p>risk-adjusted values and HDI bounds appendeded to <cite>df</cite>.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>df (pandas.DataFrame)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.GeoMunger.get_risk_adjusted_hp">
+<span class="sig-name descname"><span class="pre">get_risk_adjusted_hp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">adjustment_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">160</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.GeoMunger.get_risk_adjusted_hp" title="Link to this definition"></a></dt>
+<dd><p>This method gets risk-adjusted house prices for stations with
+rainfall above threshold. adjustment_df is a pandas.DataFrame of
+normalized rainfall.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pandas.DataFrame</em>) – A pandas.DataFrame containing return
+intensity and house prices.</p></li>
+<li><p><strong>adjustment_df</strong> (<em>pandas.DataFrame</em>) – A pandas.DataFrame
+generated by <cite>self.minmax_normalizer</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>threshold (int): The value that ‘Return intensity’ should</dt><dd><p>exceed for risk-adjustment to take place, default value
+160 (mm).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>A pandas.DataFrame which is <cite>df</cite></dt><dd><p>with additional columns containing risk-adjustment in
+addition to a column contain the values used to peform
+risk-adjustment.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>df (pandas.DataFrame)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.GeoMunger.join_house_prices">
+<span class="sig-name descname"><span class="pre">join_house_prices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cols_to_keep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.GeoMunger.join_house_prices" title="Link to this definition"></a></dt>
+<dd><p>Joins <cite>self.house_price</cite> and <cite>self.station_coords</cite> using
+geopandas.sjoin_nearest() and sets the result to
+<cite>self.unified_gdf</cite>. The result is that met station will be
+assigned to their geographically nearest house price region.
+Also drops unneeded columns, a list of column names can be
+specified using <cite>cols_to_keep</cite> to change which columns are kept.</p>
+<dl class="simple">
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>cols_to_keep (list-like): A list of columns names to be kept</dt><dd><p>in the resulting GeoDataFrame.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.GeoMunger.minmax_normalizer">
+<span class="sig-name descname"><span class="pre">minmax_normalizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">risk_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Return</span> <span class="pre">intensity'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdi_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['Lower',</span> <span class="pre">'Upper']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_bound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.GeoMunger.minmax_normalizer" title="Link to this definition"></a></dt>
+<dd><p>Min-Max normalizer which normalizes values to have a max
+value of ‘upper_bound’. Returns pandas DataFrame of the original
+values and the normalized values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>pandas.DataFrame</em>) – A pandas.DataFrame containing the data to be normalized.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>risk_var (str): The name of the column to be normalized,</dt><dd><p>default ‘Return intensity’.</p>
+</dd>
+<dt>hdi_cols (list): A list of length 2, where each element is a</dt><dd><p>string of the name of the columns containing the lower
+and upper HDI, respectively. Default value is
+<a href="#id1"><span class="problematic" id="id2">`</span></a>[‘Lower’, ‘Upper’].</p>
+</dd>
+<dt>upper_bound (float): Specify the largest value, effectively</dt><dd><p>control the scale of the normalizer.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>A pandas.DataFrame</dt><dd><p>containing normalized values.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>adj_multiplier (pandas.DataFrame)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.GeoMunger.remove_nans">
+<span class="sig-name descname"><span class="pre">remove_nans</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.GeoMunger.remove_nans" title="Link to this definition"></a></dt>
+<dd><p>Removes rows from <cite>self.unified_gdf</cite> which the column
+‘Average_Price’ is NA and resets the index of <cite>self.unified_gdf</cite>.
+NB calling this method will change <cite>self.unified_gdf</cite> in place.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.GeoMunger.tidy_data">
+<span class="sig-name descname"><span class="pre">tidy_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gev_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.GeoMunger.tidy_data" title="Link to this definition"></a></dt>
+<dd><p>Performs data munging on a gev_dict instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.WebScraper">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gev_utils.DataImportUtils.</span></span><span class="sig-name descname"><span class="pre">WebScraper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.WebScraper" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Scrapes met station data and parses data into a usable format.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.WebScraper.self.base_url">
+<span class="sig-prename descclassname"><span class="pre">self.</span></span><span class="sig-name descname"><span class="pre">base_url</span></span><a class="headerlink" href="#gev_utils.DataImportUtils.WebScraper.self.base_url" title="Link to this definition"></a></dt>
+<dd><p>The base url to be scraped</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.WebScraper.self.station_links">
+<span class="sig-prename descclassname"><span class="pre">self.</span></span><span class="sig-name descname"><span class="pre">station_links</span></span><a class="headerlink" href="#gev_utils.DataImportUtils.WebScraper.self.station_links" title="Link to this definition"></a></dt>
+<dd><p>A dictionary where keys are station
+names and values are links to station data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.WebScraper.self.station_dict">
+<span class="sig-prename descclassname"><span class="pre">self.</span></span><span class="sig-name descname"><span class="pre">station_dict</span></span><a class="headerlink" href="#gev_utils.DataImportUtils.WebScraper.self.station_dict" title="Link to this definition"></a></dt>
+<dd><p>A dictionary where keys are station
+names and values are a list of data and metadata.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.WebScraper.self.nonstandard_list">
+<span class="sig-prename descclassname"><span class="pre">self.</span></span><span class="sig-name descname"><span class="pre">nonstandard_list</span></span><a class="headerlink" href="#gev_utils.DataImportUtils.WebScraper.self.nonstandard_list" title="Link to this definition"></a></dt>
+<dd><p>A list of stations where the
+format of the metadata does not permit automatic parsing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.WebScraper.get_coordinates">
+<span class="sig-name descname"><span class="pre">get_coordinates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.WebScraper.get_coordinates" title="Link to this definition"></a></dt>
+<dd><p>Attempts to extract coordinates from station metadata. If
+this fails, add the station name to self.nonstandard_list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.WebScraper.get_data">
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.WebScraper.get_data" title="Link to this definition"></a></dt>
+<dd><p>Scrapes met station data (measurements) and metadata
+(coordinates, whether a station was relocated) from
+self.base_url. Modifies self.station_dict values to contain a
+list of the station’s link, a pandas.DataFrame of station
+measurements and a list metadata.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dict where keys are station
+names and is a list of station data and metadata.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>self.station_dict (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.DataImportUtils.WebScraper.get_stations_and_links">
+<span class="sig-name descname"><span class="pre">get_stations_and_links</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.DataImportUtils.WebScraper.get_stations_and_links" title="Link to this definition"></a></dt>
+<dd><p>Scrapes base_url for met station names and met station links.
+Updates self.station_links and creates a dictionary where keys
+are met station names and values are met station links.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-gev_utils.PlottingUtils">
+<span id="gev-utils-plottingutils-module"></span><h2>gev_utils.PlottingUtils module<a class="headerlink" href="#module-gev_utils.PlottingUtils" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="gev_utils.PlottingUtils.Plotter">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gev_utils.PlottingUtils.</span></span><span class="sig-name descname"><span class="pre">Plotter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gb_outline_gdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gev_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.PlottingUtils.Plotter" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Creates visualizations. In general this class takes data and
+instances of matplotlib.figure.Figure and matplotlib.axes.Axes, it
+will create a visualization and return the modified fig and ax(es)
+instances for further fine tuning.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gev_utils.PlottingUtils.Plotter.self.gb_outline_gdf">
+<span class="sig-prename descclassname"><span class="pre">self.</span></span><span class="sig-name descname"><span class="pre">gb_outline_gdf</span></span><a class="headerlink" href="#gev_utils.PlottingUtils.Plotter.self.gb_outline_gdf" title="Link to this definition"></a></dt>
+<dd><p>An outline of the
+island of Great Britain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>geopandas.GeoDataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gev_utils.PlottingUtils.Plotter.self.gev_dict">
+<span class="sig-prename descclassname"><span class="pre">self.</span></span><span class="sig-name descname"><span class="pre">gev_dict</span></span><a class="headerlink" href="#gev_utils.PlottingUtils.Plotter.self.gev_dict" title="Link to this definition"></a></dt>
+<dd><p>The results of statiscal modelling created
+by the accompanying Jupyter notebook.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gev_utils.PlottingUtils.Plotter.self.data_dict">
+<span class="sig-prename descclassname"><span class="pre">self.</span></span><span class="sig-name descname"><span class="pre">data_dict</span></span><a class="headerlink" href="#gev_utils.PlottingUtils.Plotter.self.data_dict" title="Link to this definition"></a></dt>
+<dd><p>The instance of <cite>data_dict</cite> created by
+DataImportUtils, containing data to be used in visualizations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.PlottingUtils.Plotter.get_difference">
+<span class="sig-name descname"><span class="pre">get_difference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targ_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Risk-adjusted</span> <span class="pre">house</span> <span class="pre">price'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdi_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['Lower_adj',</span> <span class="pre">'Upper_adj']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.PlottingUtils.Plotter.get_difference" title="Link to this definition"></a></dt>
+<dd><p>Helper method to get the absolute difference between values
+and hdi bounds as the absolute difference and not the values
+themselves are needed for matplotlib.pyplot.axes.errrorbar.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>pandas.DataFrame</em>) – A pandas.DataFrame of the
+risk-adjusted values generated by DataImportUtils.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>targ_col (str): A string of the name of the column</dt><dd><p>containing risk-adjusted values, default ‘Risk-adjusted
+house price’.</p>
+</dd>
+<dt>hdi_cols (list): A list of length 2 containing the name of</dt><dd><p>the columns with the risk-adjusted lower and upper
+bounds, respectively. Default [‘Lower_adj’, ‘Upper_adj’].</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>A pandas.DataFrame</dt><dd><p>containing data used to add error bars to plots.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>error_bar_df (pandas.DataFrame)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.PlottingUtils.Plotter.plot_choropleth">
+<span class="sig-name descname"><span class="pre">plot_choropleth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geomunger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.PlottingUtils.Plotter.plot_choropleth" title="Link to this definition"></a></dt>
+<dd><p>Plots 3 choropleth maps in one figure, the first of <cite>Return
+intensity</cite>, the second is of the risk variable (average house
+price), and the third is of the risk-adjusted house price.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>geomunger</strong> (<em>class.GeoMunger</em>) – An instance of GeoMunger.</p></li>
+<li><p><strong>fig</strong> (<em>matplotlib.figure.Figure</em>) – An instance of
+matplotlib.pyplot.Fig.</p></li>
+<li><p><strong>axes</strong> (<em>an array</em><em> of </em><em>matplotlib.axes.Axes</em>) – The array of
+matplotlib.axes.Axes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>The modified instance of</dt><dd><p>matplotlib.pyplot.Fig.</p>
+</dd>
+<dt>axes (matplotlib.axes.Axes or array of Axes): The modified</dt><dd><p>array of Axes of matplotlib.axes.Axes instances.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>fig (matplotlib.figure.Figure)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.PlottingUtils.Plotter.plot_posterior">
+<span class="sig-name descname"><span class="pre">plot_posterior</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.PlottingUtils.Plotter.plot_posterior" title="Link to this definition"></a></dt>
+<dd><p>Plots posterior predictive check.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>idata</strong> (<em>arviz.InferenceData</em>) – An instance of
+arviz.InferenceData.</p></li>
+<li><p><strong>ax</strong> (<em>matplotlib.axes.Axes</em>) – An instance of
+matplotlib.axes.Axes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>The modified instance of</dt><dd><p>matplotlib.axes.Axes.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ax (matplotlib.axes.Axes)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.PlottingUtils.Plotter.plot_prior_check">
+<span class="sig-name descname"><span class="pre">plot_prior_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0,</span> <span class="pre">180]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0,</span> <span class="pre">0.4]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.PlottingUtils.Plotter.plot_prior_check" title="Link to this definition"></a></dt>
+<dd><p>Plots samples from the priors</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>idata</strong> (<em>arviz.InferenceData</em>) – An instance of
+arviz.InferenceData.</p></li>
+<li><p><strong>ax</strong> (<em>matplotlib.axes.Axes</em>) – An instance of
+matplotlib.axes.Axes.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>xlim (list): a list to be passed to matplotlib.pyplot.xlim,</dt><dd><p>default value <cite>[0, 180]</cite>.</p>
+</dd>
+<dt>ylim (list): a list to be passed to matplotlib.pyplot.ylim,</dt><dd><p>default value <cite>[0, 0.4]</cite>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>The modified instance of</dt><dd><p>matplotlib.axes.Axes.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>ax (matplotlib.axes.Axes)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.PlottingUtils.Plotter.plot_prior_post_prediction">
+<span class="sig-name descname"><span class="pre">plot_prior_post_prediction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">station_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.PlottingUtils.Plotter.plot_prior_post_prediction" title="Link to this definition"></a></dt>
+<dd><p>Plots the prior predictive, the posterior predictive and
+predictions. Styles plots using climatex.mplstyle (hard-coded).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>station_name</strong> (<em>str</em>) – A string of the station name key in
+gev_dict.</p></li>
+<li><p><strong>fig</strong> (<em>matplotlib.figure.Figure</em>) – An instance of
+matplotlib.pyplot.Fig.</p></li>
+<li><p><strong>axes</strong> (<em>an array</em><em> of </em><em>matplotlib.axes.Axes</em>) – The array of
+matplotlib.axes.Axes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>The modified instance of</dt><dd><p>matplotlib.pyplot.Fig.</p>
+</dd>
+<dt>axes (matplotlib.axes.Axes or array of Axes): The modified</dt><dd><p>array of Axes of matplotlib.axes.Axes instances.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>fig (matplotlib.figure.Figure)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.PlottingUtils.Plotter.plot_return_period">
+<span class="sig-name descname"><span class="pre">plot_return_period</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">post_pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_periods</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.PlottingUtils.Plotter.plot_return_period" title="Link to this definition"></a></dt>
+<dd><p>Plots a graph of the return intensity for each return period
+with 95% HDI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>post_pred</strong> (<em>arviz.InferenceData.posterior</em>) – An instance of
+arviz.InferenceData.posterior.</p></li>
+<li><p><strong>return_periods</strong> (<em>numpy.array</em>) – The numpy array used to
+generate predictions for the posterior.</p></li>
+<li><p><strong>ax</strong> (<em>matplotlib.axes.Axes</em>) – An instance of matplotlib.axes.Axes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>The modified instance of</dt><dd><p>matplotlib.axes.Axes.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ax (matplotlib.axes.Axes)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.PlottingUtils.Plotter.plot_risk_adj_bar">
+<span class="sig-name descname"><span class="pre">plot_risk_adj_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.PlottingUtils.Plotter.plot_risk_adj_bar" title="Link to this definition"></a></dt>
+<dd><p>Plots risk-adjusted house prices and error bars, df is the
+result of GeoMunger.get_risk_adj_df().</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pandas.DataFrame</em>) – A pandas.DataFrame containing
+risk-adjusted house prices and statistical predictions.</p></li>
+<li><p><strong>fig</strong> (<em>matplotlib.figure.Figure</em>) – An instance of
+matplotlib.pyplot.Fig.</p></li>
+<li><p><strong>axes</strong> (<em>matplotlib.axes.Axes</em>) – An instance of
+matplotlib.axes.Axes.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>index (pandas.DataFrame.index): An instance of</dt><dd><p>pandas.DataFrame.index to be used for the y-axis (NB
+this is a horizontal bar plot, so these are station
+names).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>The modified instance of</dt><dd><p>matplotlib.pyplot.Fig.</p>
+</dd>
+<dt>axes (matplotlib.axes.Axes): The modified</dt><dd><p>matplotlib.axes.Axes instance.</p>
+</dd>
+<dt>df.index (pandas.DataFrame.index): The</dt><dd><p>pandas.DataFrame.index used a labels for the plot, these
+are station names.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>fig (matplotlib.figure.Figure)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gev_utils.PlottingUtils.Plotter.plot_ts">
+<span class="sig-name descname"><span class="pre">plot_ts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">station_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gev_utils.PlottingUtils.Plotter.plot_ts" title="Link to this definition"></a></dt>
+<dd><p>Plots the time series with annual maxima highlighted and the
+probability density function estimated using Gaussian kernals.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>station_name</strong> (<em>str</em>) – A string of the met station name.</p></li>
+<li><p><strong>fig</strong> (<em>matplotlib.figure.Figure</em>) – An instance of
+matplotlib.pyplot.Fig.</p></li>
+<li><p><strong>axes</strong> (<em>matplotlib.axes.Axes</em><em> or </em><em>array</em><em> of </em><em>Axes</em>) – An instance of
+matplotlib.axes.Axes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>The modified instance of</dt><dd><p>matplotlib.pyplot.Fig.</p>
+</dd>
+<dt>axes (matplotlib.axes.Axes or array of Axes): The modified</dt><dd><p>array of Axes of matplotlib.axes.Axes instances.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>fig (matplotlib.figure.Figure)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-gev_utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-gev_utils" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Jason Galloway.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

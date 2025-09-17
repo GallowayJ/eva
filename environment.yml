@@ -12,7 +12,10 @@ dependencies:
   - jupyterlab
   - voila
   - arviz
+  - beautifulsoup4
   - pymc
+  - matplotlib
+  - numpy
   - pymc-extras
   - ipywidgets
   - scipy
