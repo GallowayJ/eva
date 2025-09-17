@@ -5,7 +5,5 @@ venv/
 *.pdf
 __*
 outputs/
-_*/
-_*
 pyproject.toml
 *.kate-swp
