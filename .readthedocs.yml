@@ -1,0 +1,8 @@
+name: gev_venv
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - sphinx
+  - sphinx-rtd-theme
+prefix: gev_venv
