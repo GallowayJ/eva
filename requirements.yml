@@ -1,24 +1,24 @@
 name: gev_venv
 channels:
   - conda-forge
-  - defaults
+  - nodefaults
 dependencies:
-  - geopandas
-  - pandas
-  - requests
-  - python-lsp-server
-  - python-lsp-ruff
-  - folium
-  - jupyterlab
-  - voila
   - arviz
   - beautifulsoup4
-  - pymc
+  - folium
+  - geopandas
+  - ipywidgets
+  - jupyterlab
   - matplotlib
   - numpy
+  - pandas
+  - pymc
   - pymc-extras
-  - ipywidgets
+  - python-lsp-ruff
+  - python-lsp-server
+  - requests
   - scipy
   - sphinx
   - sphinx-rtd-theme
+  - voila
 prefix: gev_venv
