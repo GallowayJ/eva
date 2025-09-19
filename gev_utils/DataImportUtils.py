@@ -1,5 +1,6 @@
 from io import StringIO
-import os.path, os.mkdir
+import os
+import os.path
 import time
 import re
 
@@ -285,7 +286,7 @@ class DataMunger:
         self.create_dt_index()
         self.get_station_coords()
 
-    def save_data(self, directory, **kwargs):
+    def save_data(self, outputs_dir='outputs', **kwargs):
         """Iterates through self.data_dict and saves each DataFrame into
         'directory' as a .csv named by the dictionary key (station name).
 
@@ -296,9 +297,14 @@ class DataMunger:
         Kwargs:
             Keyword arguments to pass to pandas.DataFrame.to_csv().
         """
-        os.mkdir('outputs')
+        try:
+            os.mkdir(outputs_dir)
+        except:
+            FileExistsError:
+                print(f"{outputs_dir}" already exists, files may be
+                      overwritten.)
         for k, v in self.data_dict.items():
-            fp = os.path.join(directory, f"{k}.csv")
+            fp = os.path.join(outputs_dir, f"{k}.csv")
             v[1].to_csv(fp, **kwargs)
 
 
