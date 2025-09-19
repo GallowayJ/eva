@@ -7,3 +7,4 @@ __*
 outputs/
 pyproject.toml
 *.kate-swp
+.virtual_documents/
