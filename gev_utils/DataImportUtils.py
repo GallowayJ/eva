@@ -1,5 +1,5 @@
 from io import StringIO
-import os.path
+import os.path, os.mkdir
 import time
 import re
 
@@ -296,6 +296,7 @@ class DataMunger:
         Kwargs:
             Keyword arguments to pass to pandas.DataFrame.to_csv().
         """
+        os.mkdir('outputs')
         for k, v in self.data_dict.items():
             fp = os.path.join(directory, f"{k}.csv")
             v[1].to_csv(fp, **kwargs)
