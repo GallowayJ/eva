@@ -299,10 +299,9 @@ class DataMunger:
         """
         try:
             os.mkdir(outputs_dir)
-        except:
-            FileExistsError:
-                print(f"{outputs_dir}" already exists, files may be
-                      overwritten.)
+        except FileExistsError:
+            print(f"{outputs_dir} already exists, files may be\
+                  overwritten.")
         for k, v in self.data_dict.items():
             fp = os.path.join(outputs_dir, f"{k}.csv")
             v[1].to_csv(fp, **kwargs)
