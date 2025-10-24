@@ -1,5 +1,5 @@
 Generalized Extreme Values (GEV) utils documentation
-==============================================
+====================================================
 
 This package contains code to scrape, parse, tidy and visualise data from the `Met Office's historical station data`_.
 In general, classes create dictionaries where the key is the station name and the value is a pandas.DataFrame of measurements.

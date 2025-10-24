@@ -4,19 +4,19 @@ channels:
   - nodefaults
 dependencies:
   - arviz
-  - beautifulsoup4
-  - folium
   - geopandas
   - ipywidgets
   - jupyterlab
   - matplotlib
   - numpy
   - pandas
+  - pip:
+      - beautifulsoup4
+      - requests
+      - pymc-extras
   - pymc
-  - pymc-extras
   - python-lsp-ruff
   - python-lsp-server
-  - requests
   - scipy
   - sphinx
   - sphinx-rtd-theme

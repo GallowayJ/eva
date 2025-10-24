@@ -1,8 +1,22 @@
 name: gev_venv
 channels:
   - conda-forge
-  - defaults
+  - nodefaults
 dependencies:
-  - sphinx
-  - sphinx-rtd-theme
+    - arviz
+    - geopandas
+    - ipywidgets
+    - jupyterlab
+    - matplotlib
+    - numpy
+    - pandas
+    - pip:
+        - beautifulsoup4
+        - requests
+        - pymc-extras
+    - pymc
+    - scipy
+    - sphinx
+    - sphinx-rtd-theme
+    - voila
 prefix: gev_venv
