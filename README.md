@@ -7,4 +7,4 @@ For example, in the case of creating a dictionary where values of station extrem
 
 For plotting utils, in general data in addition to a `matplotlib.pyplot` fig and ax(es) objects are require and the fig and ax(es) will always be returned allowing for further customization.
 
-Documentation is available [here](https://extreme-value-anaylsis-utils.readthedocs.io/en/latest/).
+Documentation is available [here](https://generalized-extreme-values-utils.readthedocs.io/en/latest/).
